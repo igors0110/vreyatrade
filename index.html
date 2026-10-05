@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vreya Trade OÜ — Wholesale mobile spare parts</title>
+  <meta name="description" content="Vreya Trade OÜ supplies spare parts for mobile devices to wholesale buyers. Tallinn, Estonia." />
+  <link rel="icon" href="logo.png" />
+  <style>
+    :root {
+      --ink: #111111;
+      --muted: #5c5c5c;
+      --line: #e6e6e6;
+      --bg: #fafafa;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: #fff;
+      line-height: 1.55;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,.94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(8px);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 104px;
+    }
+    .brand img { height: 68px; width: auto; }
+    .nav-links { display: flex; gap: 28px; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+    .nav-links a:hover { opacity: .55; }
+    .nav-cta {
+      border: 1px solid var(--ink);
+      padding: 9px 16px;
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .nav-cta:hover { background: var(--ink); color: #fff; }
+    .hero { padding: 92px 0 72px; border-bottom: 1px solid var(--line); }
+    .kicker {
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 22px;
+    }
+    h1 {
+      font-weight: 500;
+      font-size: clamp(40px, 6vw, 72px);
+      line-height: .98;
+      letter-spacing: -.03em;
+      margin: 0 0 24px;
+      max-width: 14ch;
+    }
+    .lead { max-width: 560px; font-size: 18px; color: #2a2a2a; margin: 0 0 36px; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      background: var(--ink);
+      color: #fff;
+      font-size: 13px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .btn:hover { background: #000; }
+    .btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+    .btn.ghost:hover { background: var(--ink); color: #fff; }
+    section { padding: 80px 0; }
+    section + section { border-top: 1px solid var(--line); }
+    h2 {
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin: 0 0 28px;
+    }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 32px; }
+    .card { border-top: 1px solid var(--ink); padding-top: 18px; }
+    .icon {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 16px;
+      stroke: #111;
+      fill: none;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .card h3 { margin: 0 0 10px; font-size: 20px; font-weight: 500; letter-spacing: -.02em; }
+    .card p { margin: 0; color: var(--muted); font-size: 15px; }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .split p { margin: 0 0 16px; font-size: 17px; max-width: 46ch; }
+    ol { margin: 8px 0 0; padding: 0; list-style: none; counter-reset: step; }
+    ol li {
+      counter-increment: step;
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 12px;
+      padding: 16px 0;
+      border-top: 1px solid var(--line);
+      font-size: 15px;
+    }
+    ol li::before {
+      content: counter(step, decimal-leading-zero);
+      font-size: 12px;
+      letter-spacing: .08em;
+      color: var(--muted);
+      padding-top: 2px;
+    }
+    .contact { background: var(--bg); border-top: 1px solid var(--line); }
+    .contact-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; }
+    .meta { margin: 0; }
+    .meta div { padding: 14px 0; border-top: 1px solid var(--line); }
+    .meta dt { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+    .meta dd { margin: 0; font-size: 16px; }
+    .note { color: var(--muted); font-size: 14px; margin-top: 22px; }
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 22px 0 28px;
+      font-size: 12px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    @media (max-width: 800px) {
+      .nav-links { display: none; }
+      .brand img { height: 52px; }
+      .nav { height: 84px; }
+      .grid-3, .split, .contact-grid { grid-template-columns: 1fr; gap: 28px; }
+      .hero { padding: 56px 0 48px; }
+      section { padding: 56px 0; }
+      .wrap { width: min(1120px, calc(100% - 32px)); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Vreya Trade OÜ">
+        <img src="logo.png" alt="Vreya Trade OÜ" />
+      </a>
+      <nav class="nav-links">
+        <a href="#about">About us</a>
+        <a href="#supply">Supply</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-cta" href="mailto:info@vreyatrade.com">Write</a>
+    </div>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <p class="kicker">Tallinn · Wholesale trade</p>
+        <h1>Spare parts for mobile devices.</h1>
+        <p class="lead">Vreya Trade OÜ supplies components for phones, tablets and laptops to wholesale buyers. Direct sourcing, clear documents, steady shipments.</p>
+        <div class="actions">
+          <a class="btn" href="mailto:info@vreyatrade.com?subject=Wholesale%20enquiry">Write to us</a>
+          <a class="btn ghost" href="#contact">Company details</a>
+        </div>
+      </div>
+    </section>
+    <section id="supply">
+      <div class="wrap">
+        <h2>What we supply</h2>
+        <div class="grid-3">
+          <article class="card">
+            <svg class="icon" viewBox="0 0 64 64" aria-hidden="true"><rect x="18" y="6" width="28" height="52" rx="4"/><rect x="22" y="12" width="20" height="34"/><path d="M29 50h6"/></svg>
+            <h3>Displays</h3>
+            <p>Screen assemblies for current and previous phone models, supplied in wholesale lots.</p>
+          </article>
+          <article class="card">
+            <svg class="icon" viewBox="0 0 64 64" aria-hidden="true"><rect x="14" y="16" width="36" height="34" rx="3"/><path d="M24 16v-6h6M34 10h6v6"/><path d="M22 28h20M22 34h14"/></svg>
+            <h3>Batteries</h3>
+            <p>Replacement cells for phones and laptops, packed for service centres and resellers.</p>
+          </article>
+          <article class="card">
+            <svg class="icon" viewBox="0 0 64 64" aria-hidden="true"><path d="M8 28h14l6-8h10l6 8h12"/><rect x="6" y="24" width="10" height="16" rx="1"/><rect x="48" y="24" width="10" height="16" rx="1"/><path d="M10 28v8M52 28v8M28 24v8M34 24v8M40 24v8"/></svg>
+            <h3>Flex cables</h3>
+            <p>Flex cables and connectors for displays, cameras and charging assemblies.</p>
+          </article>
+          <article class="card">
+            <svg class="icon" viewBox="0 0 64 64" aria-hidden="true"><rect x="14" y="22" width="22" height="20" rx="3"/><path d="M36 32h8"/><rect x="44" y="26" width="8" height="12" rx="1"/><path d="M20 42v6M28 42v6"/></svg>
+            <h3>Accessories</h3>
+            <p>Chargers, cables and related accessories for retail and service counters.</p>
+          </article>
+          <article class="card">
+            <svg class="icon" viewBox="0 0 64 64" aria-hidden="true"><rect x="18" y="8" width="28" height="48" rx="5"/><path d="M18 20h28M18 44h28"/><circle cx="32" cy="50" r="1.5" fill="#111" stroke="none"/></svg>
+            <h3>Housing parts</h3>
+            <p>Frames, back covers and other body parts matched to the model.</p>
+          </article>
+          <article class="card">
+            <svg class="icon" viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="14" width="48" height="32" rx="2"/><path d="M8 40h48"/><path d="M24 46h16"/></svg>
+            <h3>Laptop parts</h3>
+            <p>Spare parts for laptop repair: displays, batteries, boards and related components.</p>
+          </article>
+          <article class="card">
+            <svg class="icon" viewBox="0 0 64 64" aria-hidden="true"><path d="M26 6h12l-2 8H28z"/><path d="M30 14h4v12h-4z"/><path d="M22 26h20v28a8 8 0 0 1-8 8h-4a8 8 0 0 1-8-8z"/><path d="M28 32v18M36 32v18"/></svg>
+            <h3>Tools and equipment</h3>
+            <p>Tools and workshop equipment used in mobile device repair.</p>
+          </article>
+          <article class="card">
+            <svg class="icon" viewBox="0 0 64 64" aria-hidden="true"><rect x="16" y="8" width="32" height="48" rx="4"/><rect x="21" y="14" width="22" height="32"/><path d="M24 22h16M24 28h10"/><circle cx="32" cy="50" r="1.4" fill="#111" stroke="none"/></svg>
+            <h3>Refurbishing parts</h3>
+            <p>Touchscreens, adhesive frames and parts used when a device is refurbished.</p>
+          </article>
+          <article class="card">
+            <svg class="icon" viewBox="0 0 64 64" aria-hidden="true"><rect x="10" y="14" width="18" height="18"/><rect x="36" y="14" width="18" height="18"/><rect x="10" y="36" width="18" height="14"/><path d="M40 43h10M45 38v10"/></svg>
+            <h3>Other parts</h3>
+            <p>Other components supplied to order, against a model list and quantity.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <div class="wrap split">
+        <div>
+          <h2>About us</h2>
+          <p>Vreya Trade OÜ is a young and fast-growing company. We work with markets in Southeast Asia, North America and Europe.</p>
+          <p>Our goal is to become a leading wholesale supplier of spare parts for mobile devices.</p>
+        </div>
+        <ol>
+          <li>Southeast Asia — sourcing and supply.</li>
+          <li>North America — wholesale buyers and partners.</li>
+          <li>Europe — trade, documents and delivery.</li>
+        </ol>
+      </div>
+    </section>
+    <section id="process">
+      <div class="wrap split">
+        <div>
+          <h2>How we work</h2>
+          <p>We work with trade buyers, repair networks and distributors. Orders are confirmed in writing, with model, quantity and delivery terms agreed before shipment.</p>
+          <p>The company is registered in Estonia and operates from Tallinn.</p>
+        </div>
+        <ol>
+          <li>Send the list of parts, models and volumes to info@vreyatrade.com.</li>
+          <li>We confirm availability, price and lead time.</li>
+          <li>Shipment follows the agreed terms and documents.</li>
+        </ol>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <h2>Contact</h2>
+          <p class="lead" style="margin-bottom:28px">For wholesale enquiries, write to us. We reply by email.</p>
+          <a class="btn" href="mailto:info@vreyatrade.com?subject=Wholesale%20enquiry%20-%20Vreya%20Trade">Write to us</a>
+          <p class="note">Email opens in your mail client. Subject line is filled in.</p>
+        </div>
+        <dl class="meta">
+          <div>
+            <dt>Company</dt>
+            <dd>Vreya Trade OÜ</dd>
+          </div>
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:info@vreyatrade.com">info@vreyatrade.com</a></dd>
+          </div>
+          <div>
+            <dt>Address</dt>
+            <dd>Narva mnt 7-636<br />Kesklinna linnaosa, Tallinn 10117<br />Estonia</dd>
+          </div>
+          <div>
+            <dt>Activity</dt>
+            <dd>Wholesale of spare parts for mobile equipment</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap">
+      <span>Vreya Trade OÜ</span>
+      <span>Tallinn, Estonia</span>
+    </div>
+  </footer>
+</body>
+</html>
